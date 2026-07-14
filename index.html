@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Portfólio pessoal de Leonardo Leopoldo"
+    >
+
+    <title>Leonardo Leopoldo | Portfólio</title>
+
+
+    <style>
+
+        /* ======================================================
+           CONFIGURAÇÕES GERAIS
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        :root {
+
+            --background: #080b12;
+
+            --background-secondary: #0d111b;
+
+            --card: rgba(255, 255, 255, 0.06);
+
+            --border: rgba(255, 255, 255, 0.10);
+
+            --text: #f4f7fb;
+
+            --muted: #9ca6b5;
+
+            --green: #68ffb7;
+
+            --blue: #63a7ff;
+
+            --radius: 22px;
+
+            --max-width: 1200px;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(99, 167, 255, 0.15),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(104, 255, 183, 0.10),
+                    transparent 25%
+                ),
+
+                var(--background);
+
+            color: var(--text);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+        }
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+
+                linear-gradient(
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+
+            z-index: -1;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button {
+            font: inherit;
+        }
+
+
+        .container {
+
+            width: min(
+                calc(100% - 40px),
+                var(--max-width)
+            );
+
+            margin: auto;
+        }
+
+
+
+        /* ======================================================
+           MENU
+        ====================================================== */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 18px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(
+                calc(100% - 32px),
+                var(--max-width)
+            );
+
+            z-index: 1000;
+
+            background: rgba(8, 11, 18, 0.75);
+
+            border: 1px solid var(--border);
+
+            backdrop-filter: blur(20px);
+
+            border-radius: 18px;
+        }
+
+
+        .nav-content {
+
+            min-height: 65px;
+
+            padding: 0 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+
+            font-size: 1.25rem;
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
+        }
+
+
+        .logo span {
+            color: var(--green);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 25px;
+
+            color: var(--muted);
+
+            font-size: 0.9rem;
+        }
+
+
+        .nav-links a {
+
+            transition: 0.25s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--green);
+        }
+
+
+        .menu-button {
+
+            display: none;
+
+            background: none;
+
+            color: white;
+
+            border: none;
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+        }
+
+
+
+        /* ======================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 130px 0 70px;
+        }
+
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr
+                0.8fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 100px;
+
+            padding: 8px 14px;
+
+            color: var(--muted);
+
+            font-size: 0.85rem;
+
+            margin-bottom: 25px;
+        }
+
+
+        .status-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            background: var(--green);
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 15px var(--green);
+        }
+
+
+        h1 {
+
+            font-size: clamp(
+                3.5rem,
+                8vw,
+                7rem
+            );
+
+            line-height: 0.9;
+
+            letter-spacing: -6px;
+        }
+
+
+        .outline {
+
+            color: transparent;
+
+            -webkit-text-stroke:
+                1px rgba(255,255,255,.5);
+        }
+
+
+        .hero-description {
+
+            max-width: 720px;
+
+            margin: 30px 0;
+
+            color: var(--muted);
+
+            font-size: 1.1rem;
+        }
+
+
+        .typing-area {
+
+            color: white;
+
+            font-weight: bold;
+        }
+
+
+        #typing {
+            color: var(--green);
+        }
+
+
+        .cursor {
+
+            color: var(--green);
+
+            animation: piscar 0.8s infinite;
+        }
+
+
+        @keyframes piscar {
+
+            50% {
+                opacity: 0;
+            }
+
+        }
+
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .button {
+
+            padding: 15px 22px;
+
+            border-radius: 13px;
+
+            border: 1px solid var(--border);
+
+            transition: 0.25s;
+
+            cursor: pointer;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .button:hover {
+
+            transform: translateY(-4px);
+        }
+
+
+        .button-primary {
+
+            background: var(--green);
+
+            color: #04110b;
+
+            font-weight: bold;
+        }
+
+
+        .button-secondary {
+
+            background: var(--card);
+        }
+
+
+
+        /* ======================================================
+           CARD HERO
+        ====================================================== */
+
+        .hero-card {
+
+            min-height: 480px;
+
+            padding: 30px;
+
+            border-radius: 30px;
+
+            border: 1px solid var(--border);
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(104,255,183,.08),
+                    transparent 50%
+                ),
+
+                linear-gradient(
+                    330deg,
+                    rgba(99,167,255,.08),
+                    transparent 50%
+                ),
+
+                var(--card);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero-card::after {
+
+            content: "LL";
+
+            position: absolute;
+
+            right: -30px;
+
+            bottom: -90px;
+
+            font-size: 16rem;
+
+            font-weight: 900;
+
+            color: rgba(255,255,255,.025);
+        }
+
+
+        .small-title {
+
+            color: var(--green);
+
+            font-size: 0.75rem;
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+        }
+
+
+        .hero-card h2 {
+
+            font-size: 2.2rem;
+
+            line-height: 1.05;
+
+            margin-top: 20px;
+
+            letter-spacing: -2px;
+        }
+
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-top: 30px;
+        }
+
+
+        .tag {
+
+            padding: 8px 12px;
+
+            border-radius: 9px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,.04);
+
+            color: #dce3ec;
+
+            font-size: 0.85rem;
+        }
+
+
+        .hero-card-footer {
+
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 30px;
+
+            right: 30px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            z-index: 2;
+        }
+
+
+        .hero-card-footer strong {
+
+            display: block;
+
+            font-size: 2rem;
+        }
+
+
+        .hero-card-footer span {
+
+            color: var(--muted);
+
+            font-size: 0.8rem;
+        }
+
+
+
+        /* ======================================================
+           SEÇÕES
+        ====================================================== */
+
+        section {
+
+            scroll-margin-top: 100px;
+        }
+
+
+        .section {
+
+            padding: 100px 0;
+        }
+
+
+        .section-header {
+
+            display: grid;
+
+            grid-template-columns:
+                0.5fr
+                1.5fr;
+
+            gap: 40px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .section-number {
+
+            color: var(--green);
+
+            font-size: 0.8rem;
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+        }
+
+
+        .section-title {
+
+            font-size: clamp(
+                2.3rem,
+                5vw,
+                4.5rem
+            );
+
+            line-height: 1;
+
+            letter-spacing: -4px;
+        }
+
+
+        .section-text {
+
+            color: var(--muted);
+
+            max-width: 750px;
+
+            margin-top: 20px;
+        }
+
+
+
+        /* ======================================================
+           SOBRE
+        ====================================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr
+                0.7fr;
+
+            gap: 18px;
+        }
+
+
+        .card {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+        }
+
+
+        .about-content {
+
+            padding: 35px;
+        }
+
+
+        .about-content p {
+
+            color: var(--muted);
+
+            font-size: 1.05rem;
+        }
+
+
+        .about-content p + p {
+
+            margin-top: 20px;
+        }
+
+
+        .facts {
+
+            display: grid;
+
+            gap: 18px;
+        }
+
+
+        .fact {
+
+            padding: 25px;
+        }
+
+
+        .fact strong {
+
+            display: block;
+
+            font-size: 1.8rem;
+        }
+
+
+        .fact span {
+
+            color: var(--muted);
+        }
+
+
+
+        /* ======================================================
+           PORTFÓLIO
+        ====================================================== */
+
+        .projects {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .project {
+
+            min-height: 350px;
+
+            padding: 30px;
+
+            position: relative;
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+
+        .project:hover {
+
+            transform: translateY(-6px);
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.09
+            );
+        }
+
+
+        .project-number {
+
+            color: var(--muted);
+
+            font-size: 0.8rem;
+        }
+
+
+        .project h3 {
+
+            margin-top: 55px;
+
+            margin-bottom: 15px;
+
+            font-size: 1.7rem;
+
+            line-height: 1.1;
+        }
+
+
+        .project p {
+
+            color: var(--muted);
+        }
+
+
+        .project-tags {
+
+            position: absolute;
+
+            left: 30px;
+
+            bottom: 30px;
+
+            right: 30px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+
+        /* ======================================================
+           HABILIDADES
+        ====================================================== */
+
+        .skills {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .skill {
+
+            padding: 30px;
+        }
+
+
+        .skill h3 {
+
+            margin-bottom: 20px;
+        }
+
+
+        .skill ul {
+
+            list-style: none;
+        }
+
+
+        .skill li {
+
+            color: var(--muted);
+
+            border-bottom: 1px solid var(--border);
+
+            padding: 12px 0;
+        }
+
+
+
+        /* ======================================================
+           PESSOAL
+        ====================================================== */
+
+        .personal-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .personal {
+
+            min-height: 220px;
+
+            padding: 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+
+        .personal-icon {
+
+            font-size: 2.2rem;
+        }
+
+
+        .personal p {
+
+            color: var(--muted);
+
+            font-size: 0.9rem;
+
+            margin-top: 7px;
+        }
+
+
+
+        /* ======================================================
+           CONTATO
+        ====================================================== */
+
+        .contact {
+
+            padding: 55px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr
+                0.7fr;
+
+            gap: 40px;
+
+            align-items: end;
+
+            background:
+
+                linear-gradient(
+                    130deg,
+                    rgba(104,255,183,.1),
+                    transparent 50%
+                ),
+
+                var(--card);
+        }
+
+
+        .contact h2 {
+
+            font-size: clamp(
+                2.5rem,
+                6vw,
+                5.5rem
+            );
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+        }
+
+
+        .contact p {
+
+            color: var(--muted);
+
+            margin-top: 20px;
+        }
+
+
+        .contact-buttons {
+
+            display: grid;
+
+            gap: 10px;
+        }
+
+
+
+        /* ======================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            padding: 40px 0;
+
+            color: var(--muted);
+
+            font-size: 0.85rem;
+        }
+
+
+
+        /* ======================================================
+           ANIMAÇÕES
+        ====================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition:
+                opacity 0.7s,
+                transform 0.7s;
+        }
+
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+
+        /* ======================================================
+           RESPONSIVO
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+
+            .about-grid,
+
+            .section-header,
+
+            .contact {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .skills {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .personal-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            h1 {
+
+                letter-spacing: -4px;
+            }
+
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 0;
+
+                right: 0;
+
+                display: none;
+
+                flex-direction: column;
+
+                padding: 20px;
+
+                background: #080b12;
+
+                border: 1px solid var(--border);
+
+                border-radius: 15px;
+            }
+
+
+            .nav-links.open {
+
+                display: flex;
+            }
+
+
+            .menu-button {
+
+                display: block;
+            }
+
+
+            .projects,
+
+            .skills,
+
+            .personal-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact {
+
+                padding: 30px;
+            }
+
+
+            .hero-card {
+
+                min-height: 430px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================================
+         MENU
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-content">
+
+            <a
+                href="#inicio"
+                class="logo"
+            >
+                LEO<span>.</span>
+            </a>
+
+
+            <div
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#portfolio">
+                    Portfólio
+                </a>
+
+                <a href="#habilidades">
+                    Habilidades
+                </a>
+
+                <a href="#pessoal">
+                    Além do trabalho
+                </a>
+
+            </div>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ======================================================
+         HERO
+    ====================================================== -->
+
+    <section
+        class="hero"
+        id="inicio"
+    >
+
+        <div class="container hero-grid">
+
+
+            <div>
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    São Paulo · Seguros · Tecnologia
+
+                </div>
+
+
+                <h1>
+
+                    Leonardo
+
+                    <br>
+
+                    <span class="outline">
+                        Leopoldo.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Profissional de Seguros de Transportes
+                    com formação em Tecnologia da Informação.
+
+                    Gosto de entender processos,
+                    encontrar gargalos e construir soluções
+                    que transformem trabalho manual
+                    em fluxos mais inteligentes.
+
+                    <br><br>
+
+
+                    <span class="typing-area">
+
+                        Atualmente focado em
+
+                        <span id="typing"></span>
+
+                        <span class="cursor">|</span>
+
+                    </span>
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <a
+                        href="#portfolio"
+                        class="button button-primary"
+                    >
+
+                        Ver projetos ↓
+
+                    </a>
+
+
+                    <a
+                        href="#sobre"
+                        class="button button-secondary"
+                    >
+
+                        Quem sou eu
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <aside class="hero-card reveal">
+
+
+                <span class="small-title">
+
+                    PERFIL PROFISSIONAL
+
+                </span>
+
+
+                <h2>
+
+                    Seguros de transportes.
+
+                    <br>
+
+                    Tecnologia aplicada.
+
+                    <br>
+
+                    Processos melhores.
+
+                </h2>
+
+
+
+                <div class="tags">
+
+                    <span class="tag">RCTR-C</span>
+
+                    <span class="tag">RC-DC</span>
+
+                    <span class="tag">RC-V</span>
+
+                    <span class="tag">Subscrição</span>
+
+                    <span class="tag">Marine</span>
+
+                    <span class="tag">Automação</span>
+
+                    <span class="tag">JavaScript</span>
+
+                    <span class="tag">Python</span>
+
+                    <span class="tag">OpenSCAD</span>
+
+                    <span class="tag">IA</span>
+
+                </div>
+
+
+
+                <div class="hero-card-footer">
+
+                    <div>
+
+                        <strong>11+</strong>
+
+                        <span>
+                            anos no mercado securitário
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>∞</strong>
+
+                        <span>
+                            ideias para automatizar processos
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         SOBRE
+    ====================================================== -->
+
+    <section
+        class="section"
+        id="sobre"
+    >
+
+        <div class="container">
+
+
+            <div class="section-header reveal">
+
+
+                <div>
+
+                    <span class="section-number">
+
+                        01 · SOBRE
+
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <h2 class="section-title">
+
+                        Entre seguros,
+                        sistemas e a mania
+                        de melhorar tudo.
+
+                    </h2>
+
+
+                    <p class="section-text">
+
+                        Minha trajetória profissional
+                        combina experiência no mercado securitário
+                        com tecnologia,
+                        análise de processos
+                        e desenvolvimento de soluções.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="about-grid">
+
+
+                <article class="card about-content reveal">
+
+
+                    <p>
+
+                        Sou <strong>Leonardo Leopoldo</strong>,
+                        de São Paulo.
+
+                        Tenho formação em
+
+                        <strong>
+                            Gestão de Tecnologia da Informação
+                        </strong>
+
+                        e mais de 11 anos de experiência
+                        no mercado securitário,
+                        com forte atuação em
+
+                        <strong>
+                            Seguros de Transportes.
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+
+                        No meu dia a dia,
+                        trabalho com análise de propostas,
+                        renovações,
+                        precificação,
+                        sinistralidade,
+                        limites de garantia,
+                        prêmio mínimo,
+                        gerenciamento de riscos
+                        e mercadorias sensíveis.
+
+                    </p>
+
+
+                    <p>
+
+                        Tenho experiência com
+
+                        <strong>
+                            RCTR-C,
+                            RC-DC,
+                            RC-V,
+                            transportes nacionais,
+                            importação e exportação.
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+
+                        Mas a área que mais me interessa
+                        é justamente onde
+
+                        <strong>
+                            seguros e tecnologia se encontram.
+                        </strong>
+
+                        Gosto de analisar processos manuais,
+                        identificar retrabalho
+                        e desenvolver ferramentas
+                        capazes de simplificar essas atividades.
+
+                    </p>
+
+
+                    <p>
+
+                        Já desenvolvi ferramentas
+                        para tratamento de planilhas,
+                        conversão de informações,
+                        automação de tarefas
+                        e geração de documentos.
+
+                        Para mim,
+                        tecnologia não serve apenas
+                        para criar apresentações bonitas
+                        com a palavra
+
+                        <em>"inovação"</em>
+
+                        escrita em azul corporativo.
+
+                        Ela precisa resolver problemas reais.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <div class="facts">
+
+
+                    <article class="card fact reveal">
+
+                        <strong>São Paulo</strong>
+
+                        <span>
+                            Minha base
+                        </span>
+
+                    </article>
+
+
+                    <article class="card fact reveal">
+
+                        <strong>TI + Seguros</strong>
+
+                        <span>
+                            Minha combinação profissional
+                        </span>
+
+                    </article>
+
+
+                    <article class="card fact reveal">
+
+                        <strong>Processos</strong>
+
+                        <span>
+                            Sempre procurando uma forma melhor
+                            de fazer
+                        </span>
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         PORTFÓLIO
+    ====================================================== -->
+
+    <section
+        class="section"
+        id="portfolio"
+    >
+
+        <div class="container">
+
+
+            <div class="section-header reveal">
+
+
+                <div>
+
+                    <span class="section-number">
+
+                        02 · PORTFÓLIO
+
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <h2 class="section-title">
+
+                        Projetos que começaram
+                        com a pergunta:
+
+                        “por que ainda fazemos
+                        isso na mão?”
+
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="projects">
+
+
+                <article class="card project reveal">
+
+
+                    <span class="project-number">
+
+                        PROJETO 01
+
+                    </span>
+
+
+                    <h3>
+
+                        Conversor AT&M × CIT
+
+                    </h3>
+
+
+                    <p>
+
+                        Aplicação para leitura,
+                        tratamento,
+                        filtragem
+                        e exportação de planilhas
+                        utilizadas em processos
+                        ligados à averbação
+                        de seguros de transportes.
+
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span class="tag">JavaScript</span>
+
+                        <span class="tag">Excel</span>
+
+                        <span class="tag">SheetJS</span>
+
+                        <span class="tag">Seguros</span>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="card project reveal">
+
+
+                    <span class="project-number">
+
+                        PROJETO 02
+
+                    </span>
+
+
+                    <h3>
+
+                        Automação de certificados
+
+                    </h3>
+
+
+                    <p>
+
+                        Protótipo para importar PDFs,
+                        extrair informações,
+                        permitir conferência dos dados
+                        e gerar certificados
+                        de forma automatizada.
+
+                        Um processo que pode ser executado
+                        em aproximadamente 40 segundos.
+
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span class="tag">Automação</span>
+
+                        <span class="tag">PDF</span>
+
+                        <span class="tag">IA</span>
+
+                        <span class="tag">Processos</span>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="card project reveal">
+
+
+                    <span class="project-number">
+
+                        PROJETO 03
+
+                    </span>
+
+
+                    <h3>
+
+                        Ferramentas para análise
+                        de transportes
+
+                    </h3>
+
+
+                    <p>
+
+                        Soluções para tratamento
+                        e consolidação de dados,
+                        análise de sinistralidade,
+                        organização de propostas
+                        e apoio à subscrição
+                        de riscos de transportes.
+
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span class="tag">Underwriting</span>
+
+                        <span class="tag">Marine</span>
+
+                        <span class="tag">Dados</span>
+
+                        <span class="tag">Excel</span>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="card project reveal">
+
+
+                    <span class="project-number">
+
+                        PROJETO 04
+
+                    </span>
+
+
+                    <h3>
+
+                        Modelagem paramétrica
+                        e impressão 3D
+
+                    </h3>
+
+
+                    <p>
+
+                        Desenvolvimento de peças funcionais,
+                        carcaças,
+                        suportes
+                        e componentes paramétricos
+                        utilizando OpenSCAD
+                        e impressão 3D.
+
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span class="tag">OpenSCAD</span>
+
+                        <span class="tag">3D</span>
+
+                        <span class="tag">Prototipagem</span>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         HABILIDADES
+    ====================================================== -->
+
+    <section
+        class="section"
+        id="habilidades"
+    >
+
+        <div class="container">
+
+
+            <div class="section-header reveal">
+
+
+                <span class="section-number">
+
+                    03 · HABILIDADES
+
+                </span>
+
+
+                <h2 class="section-title">
+
+                    Conhecimento técnico
+                    com foco em resolver
+                    problemas.
+
+                </h2>
+
+
+            </div>
+
+
+
+            <div class="skills">
+
+
+                <article class="card skill reveal">
+
+
+                    <h3>
+
+                        Seguros de Transportes
+
+                    </h3>
+
+
+                    <ul>
+
+                        <li>
+                            Subscrição de riscos
+                        </li>
+
+                        <li>
+                            RCTR-C
+                        </li>
+
+                        <li>
+                            RC-DC
+                        </li>
+
+                        <li>
+                            RC-V
+                        </li>
+
+                        <li>
+                            Importação e exportação
+                        </li>
+
+                        <li>
+                            Sinistralidade e precificação
+                        </li>
+
+                        <li>
+                            PGR
+                        </li>
+
+                    </ul>
+
+
+                </article>
+
+
+
+                <article class="card skill reveal">
+
+
+                    <h3>
+
+                        Tecnologia
+
+                    </h3>
+
+
+                    <ul>
+
+                        <li>
+                            HTML
+                        </li>
+
+                        <li>
+                            CSS
+                        </li>
+
+                        <li>
+                            JavaScript
+                        </li>
+
+                        <li>
+                            Python
+                        </li>
+
+                        <li>
+                            IA aplicada
+                        </li>
+
+                        <li>
+                            OpenSCAD
+                        </li>
+
+                        <li>
+                            Automação
+                        </li>
+
+                    </ul>
+
+
+                </article>
+
+
+
+                <article class="card skill reveal">
+
+
+                    <h3>
+
+                        Processos & Sistemas
+
+                    </h3>
+
+
+                    <ul>
+
+                        <li>
+                            CIT e CITNET
+                        </li>
+
+                        <li>
+                            HANS
+                        </li>
+
+                        <li>
+                            AT&M
+                        </li>
+
+                        <li>
+                            Análise de integrações
+                        </li>
+
+                        <li>
+                            Excel
+                        </li>
+
+                        <li>
+                            Tratamento de dados
+                        </li>
+
+                        <li>
+                            Melhoria contínua
+                        </li>
+
+                    </ul>
+
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         PESSOAL
+    ====================================================== -->
+
+    <section
+        class="section"
+        id="pessoal"
+    >
+
+        <div class="container">
+
+
+            <div class="section-header reveal">
+
+
+                <span class="section-number">
+
+                    04 · ALÉM DO TRABALHO
+
+                </span>
+
+
+                <h2 class="section-title">
+
+                    Porque viver apenas
+                    de planilhas seria
+                    uma falha de arquitetura.
+
+                </h2>
+
+
+            </div>
+
+
+
+            <div class="personal-grid">
+
+
+                <article class="card personal reveal">
+
+
+                    <span class="personal-icon">
+
+                        🏎‍🟀
+
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+
+                            Carros
+
+                        </h3>
+
+
+                        <p>
+
+                            Porsche,
+                            preparação,
+                            drift
+                            e uma curiosidade quase irresponsável
+                            por setup automotivo.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="card personal reveal">
+
+
+                    <span class="personal-icon">
+
+                        🚘
+
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+
+                            Nivus 2026
+
+                        </h3>
+
+
+                        <p>
+
+                            Meu projeto automotivo atual.
+
+                            Porque aparentemente
+                            carro original
+                            é apenas uma versão beta.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="card personal reveal">
+
+
+                    <span class="personal-icon">
+
+                        🎸
+
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+
+                            Música
+
+                        </h3>
+
+
+                        <p>
+
+                            Guitarra,
+                            Bring Me The Horizon,
+                            metalcore,
+                            hardcore
+                            e rock dos anos 2000.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="card personal reveal">
+
+
+                    <span class="personal-icon">
+
+                        ✈️
+
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+
+                            Viagens
+
+                        </h3>
+
+
+                        <p>
+
+                            Disney,
+                            Califórnia,
+                            viagens de carro
+                            e roteiros planejados
+                            com detalhes desnecessariamente específicos.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         CONTATO
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="card contact reveal">
+
+
+                <div>
+
+
+                    <span class="section-number">
+
+                        CONTATO
+
+                    </span>
+
+
+                    <h2>
+
+                        Ideias boas
+                        merecem sair
+                        da planilha.
+
+                    </h2>
+
+
+                    <p>
+
+                        Seguros de transportes,
+                        tecnologia,
+                        automação
+                        e melhoria de processos.
+
+                        É nesse cruzamento
+                        que normalmente surgem
+                        meus melhores projetos.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="contact-buttons">
+
+
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        class="button button-primary"
+                    >
+
+                        LinkedIn ↗️
+
+                    </a>
+
+
+                    <button
+                        class="button button-secondary"
+                        id="copyEmail"
+                        data-email="seuemail@email.com"
+                    >
+
+                        Copiar e-mail
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+
+        <div class="container">
+
+
+            ©
+
+            <span id="year"></span>
+
+            Leonardo Leopoldo.
+
+            Construído com HTML,
+            CSS,
+            JavaScript
+            e uma leve intolerância
+            a processos manuais.
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- ======================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* ======================================================
+           EFEITO DE DIGITAÇÃO
+        ====================================================== */
+
+        const typing =
+            document.getElementById("typing");
+
+
+        const textos = [
+
+            "seguros de transportes.",
+
+            "subscrição de riscos.",
+
+            "automação de processos.",
+
+            "tecnologia aplicada.",
+
+            "resolver problemas reais."
+
+        ];
+
+
+        let textoAtual = 0;
+
+        let letraAtual = 0;
+
+        let apagando = false;
+
+
+        function escrever() {
+
+
+            const texto =
+                textos[textoAtual];
+
+
+            if (!apagando) {
+
+
+                typing.textContent =
+                    texto.substring(
+                        0,
+                        letraAtual
+                    );
+
+
+                letraAtual++;
+
+
+                if (
+                    letraAtual >
+                    texto.length
+                ) {
+
+
+                    apagando = true;
+
+
+                    setTimeout(
+                        escrever,
+                        1200
+                    );
+
+
+                    return;
+
+                }
+
+
+            }
+
+
+            else {
+
+
+                typing.textContent =
+                    texto.substring(
+                        0,
+                        letraAtual
+                    );
+
+
+                letraAtual--;
+
+
+                if (
+                    letraAtual < 0
+                ) {
+
+
+                    apagando = false;
+
+
+                    textoAtual++;
+
+
+                    if (
+                        textoAtual >=
+                        textos.length
+                    ) {
+
+
+                        textoAtual = 0;
+
+                    }
+
+
+                    letraAtual = 0;
+
+                }
+
+            }
+
+
+            setTimeout(
+
+                escrever,
+
+                apagando
+                    ? 35
+                    : 65
+
+            );
+
+        }
+
+
+        escrever();
+
+
+
+        /* ======================================================
+           ANIMAÇÃO AO ROLAR A PÁGINA
+        ====================================================== */
+
+        const elementos =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+
+                function(entries) {
+
+
+                    entries.forEach(
+
+                        function(entry) {
+
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+
+                                observer
+                                    .unobserve(
+                                        entry.target
+                                    );
+
+                            }
+
+                        }
+
+                    );
+
+                },
+
+                {
+
+                    threshold: 0.12
+
+                }
+
+            );
+
+
+        elementos.forEach(
+
+            function(elemento) {
+
+
+                observer.observe(
+                    elemento
+                );
+
+            }
+
+        );
+
+
+
+        /* ======================================================
+           MENU MOBILE
+        ====================================================== */
+
+        const menuButton =
+            document.getElementById(
+                "menuButton"
+            );
+
+
+        const navLinks =
+            document.getElementById(
+                "navLinks"
+            );
+
+
+        menuButton.addEventListener(
+
+            "click",
+
+            function() {
+
+
+                navLinks
+                    .classList
+                    .toggle("open");
+
+            }
+
+        );
+
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach(
+
+                function(link) {
+
+
+                    link.addEventListener(
+
+                        "click",
+
+                        function() {
+
+
+                            navLinks
+                                .classList
+                                .remove("open");
+
+                        }
+
+                    );
+
+                }
+
+            );
+
+
+
+        /* ======================================================
+           COPIAR E-MAIL
+        ====================================================== */
+
+        const copyEmail =
+            document.getElementById(
+                "copyEmail"
+            );
+
+
+        copyEmail.addEventListener(
+
+            "click",
+
+            async function() {
+
+
+                const email =
+                    copyEmail.dataset.email;
+
+
+                try {
+
+
+                    await navigator
+                        .clipboard
+                        .writeText(email);
+
+
+                    copyEmail.textContent =
+                        "E-mail copiado ✓";
+
+
+                    setTimeout(
+
+                        function() {
+
+
+                            copyEmail.textContent =
+                                "Copiar e-mail";
+
+                        },
+
+                        1800
+
+                    );
+
+
+                }
+
+
+                catch {
+
+
+                    copyEmail.textContent =
+                        email;
+
+                }
+
+            }
+
+        );
+
+
+
+        /* ======================================================
+           ANO AUTOMÁTICO
+        ====================================================== */
+
+        document
+            .getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+
+    </script>
+
+
+</body>
+
+</html>
